@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <a href="/books">Home</a>
+    <a href="/logout">Logout</a>
+    <div class=review>
+        {%for review in bookreview%}
+        Rating: {{review.rating}}<br>
+        <a href="/users/{{review.user_id}}">{{review.user.first_name}}</a> says: {{review.review}}<br>
+        Posted on: {{review.created_at}}<br>
+        {% if user.id == review.user_id %}
+            <a href="/delete/{{review.id}}">delete</a>
+        {%endif%}
+
+        
+        <p>------------------------</p>
+        {%endfor%}
+
+    </div>
+    <div class=addreview>
+        <form action="/addreviewprocess/{{book.id}}" method="post">
+        {% csrf_token %}
+        Add a review:<br>
+        <textarea name="review" rows="5" cols="30"></textarea><br>
+        Rating:<br>
+        <input type="radio" name="rating" value="1 star">1 star
+        <input type="radio" name="rating" value="2 stars">2 stars
+        <input type="radio" name="rating" value="3 stars">3 stars
+        <input type="radio" name="rating" value="4 stars">4 stars
+        <input type="radio" name="rating" value="5 stars">5 stars<br><br>
+        <button>Submit review</button>
+        </form>
+    </div>
+</body>
+</html>

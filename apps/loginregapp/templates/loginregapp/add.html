@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add a book</title>
+</head>
+<body>
+    <a href="/books">Home</a>
+    <a href="/logout">Logout</a>
+    <H2>Add a New book Title and a Review</H2>
+    <form action="/addbookprocess" method="post">
+    {% csrf_token %}
+    Book title:<input type="text" name="title"><br>
+    Author: <input type="text" name="author"><br>
+    Review:<br><textarea name="review" rows="5" cols="30"></textarea><br>
+    Rating:<br>
+    <input type="radio" name="rating" value="1 star">1 star
+    <input type="radio" name="rating" value="2 stars">2 stars
+    <input type="radio" name="rating" value="3 stars">3 stars
+    <input type="radio" name="rating" value="4 stars">4 stars
+    <input type="radio" name="rating" value="5 stars">5 stars<br><br>
+    <button>Add book and review</button>
+    </form>
+</body>
+</html>

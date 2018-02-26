@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User profile</title>
+</head>
+<body>
+    <a href="/books">Home</a>
+    <a href="/books/add">Add Book and Review</a>
+    <a href="/logout">Logout</a><br><br><br>
+    User Alias:{{userinfo.first_name}}<br>
+    Name:{{userinfo.first_name}} {{userinfo.last_name}}<br>
+    Email:{{userinfo.email}}<br>
+    Total Reviews:{{count}}<br><br><br>
+
+
+    Posted Review on the following books:<br><br>
+    {% for reviewed_book in reviewed_booklist%}
+    <a href="/books/{{reviewed_book.id}}">{{reviewed_book.title}}</a><br><br>
+    {%endfor%}
+
+</body>
+</html>
