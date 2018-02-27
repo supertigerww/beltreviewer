@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <title>Login and Registration</title>
 </head>
 <body>
-    <div class=register>
+    <div class="col-sm-4">
         <h2>Registration</h2><br>
         <form action='/register' method='post'>
         {% csrf_token %}
@@ -20,21 +21,21 @@
         {% endfor %}
         </ul>
         {% endif %}
-        First Name:<input type="text" name="first_name"><br>
-        Last Name:<input type="text" name="last_name"><br>
-        Email:<input type="text" name="email"><br>
-        Password:<input type="text" name="password"><br>
-        Confirm Password:<input type="text" name="confirmpassword"><br>
-        <button>Register</button>
+        First Name:<input type="text" name="first_name" class="form-control"><br>
+        Last Name:<input type="text" name="last_name" class="form-control"><br>
+        Email:<input type="text" name="email" class="form-control"><br>
+        Password:<input type="text" name="password" class="form-control"><br>
+        Confirm Password:<input type="text" name="confirmpassword" class="form-control"><br>
+        <button class="btn btn-primary">Register</button>
         </form>
     </div>
-    <div class=login>
+    <div class="col-sm-4">
         <h2>Login</h2><br>
         <form action='/login' method='post'>
         {% csrf_token %}
-        Email:<input type="text" name="email"><br>
-        Password:<input type="text" name="password"><br>
-        <button>Login</button>
+        Email:<input type="text" name="email" class="form-control"><br>
+        Password:<input type="text" name="password" class="form-control"><br>
+        <button class="btn btn-primary">Login</button>
         </form>
     </div>
     

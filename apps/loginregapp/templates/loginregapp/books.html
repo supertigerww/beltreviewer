@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <title>Welcome</title>
 </head>
 <body>
-    <div class=dashboard>
+    <div class="header">
         <h1>Welcome!{{user.first_name}}</h1>
         <a href="/books/add">Add Book and Review</a>
         <a href="/logout">logout</a>
     </div>
-    <div class=reviews>
+    <div class="col-sm-4">
         <h3>Recent Book Reviews</h3>
         {% for review in recentreview %}
         <a href="/books/{{review.book_id}}">{{review.title}}</a><br>
@@ -24,7 +25,7 @@
 
 
     </div>
-    <div class=booklist>
+    <div class="col-sm-4">
         <h3>Other Books with Reviews</h3>
         {% for book in booklist %}
         <a href="/books/{{book.id}}">{{book.title}}</a><br><br>
